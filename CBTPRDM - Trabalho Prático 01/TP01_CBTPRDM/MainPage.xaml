@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TP01_CBTPRDM.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center"
+            HorizontalOptions="Center">
+
+            <Label
+                Text="Aplicação Teste"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <HorizontalStackLayout
+                HorizontalOptions="Center"
+                Spacing="10">
+                <Label
+                    Text="ID:"
+                    VerticalOptions="Center"
+                    FontSize="20" />
+                <Entry
+                    x:Name="IdEntry"
+                    Placeholder="Digite seu ID"
+                    WidthRequest="200" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout
+                HorizontalOptions="Center"
+                Spacing="10">
+                <Label
+                    Text="Pass:"
+                    VerticalOptions="Center"
+                    FontSize="20" />
+                <Entry
+                    x:Name="PassEntry"
+                    Placeholder="Digite sua senha"
+                    IsPassword="True"
+                    WidthRequest="200" />
+            </HorizontalStackLayout>
+            
+            <Button
+                x:Name="OkBtn"
+                Text="OK"
+                Clicked="OkBtn_Clicked"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="LimparBtn"
+                Text="Limpar"
+                Clicked="LimparBtn_Clicked"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="CreditosBtn"
+                Text="Créditos"
+                Clicked="CreditosBtn_Clicked"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
