@@ -1,0 +1,57 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TarefasApp.EditarTarefaPage"
+             BackgroundColor="{StaticResource BegeClaro}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="10" Spacing="10">
+
+            <Label Text="Editar Tarefa"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   TextColor="{StaticResource MarromEscuro}"
+                   HorizontalOptions="Center"/>
+
+            <Label Text="Título" TextColor="{StaticResource MarromEscuro}"/>
+            <Entry x:Name="entryTitulo" 
+                   BackgroundColor="White" 
+                   TextColor="{StaticResource MarromEscuro}"/>
+
+            <Label Text="Descrição" TextColor="{StaticResource MarromEscuro}"/>
+            <Editor x:Name="entryDescricao" 
+                    HeightRequest="100" 
+                    BackgroundColor="White" 
+                    TextColor="{StaticResource MarromEscuro}"/>
+
+            <Label Text="Data de Criação" TextColor="{StaticResource MarromEscuro}"/>
+            <DatePicker x:Name="datePicker" 
+                        BackgroundColor="White" 
+                        TextColor="{StaticResource MarromEscuro}"/>
+
+            <Label Text="Prioridade" TextColor="{StaticResource MarromEscuro}"/>
+            <Picker x:Name="pickerPrioridade" 
+                    BackgroundColor="White" 
+                    TextColor="{StaticResource MarromEscuro}">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Baixa</x:String>
+                        <x:String>Normal</x:String>
+                        <x:String>Alta</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <HorizontalStackLayout Spacing="10" Margin="0,20,0,0">
+                <Button Text="Salvar" 
+                        BackgroundColor="{StaticResource MarromClaro}" 
+                        TextColor="White" 
+                        Clicked="OnSalvarClicked"/>
+                <Button Text="Cancelar" 
+                        BackgroundColor="{StaticResource MarromEscuro}" 
+                        TextColor="White" 
+                        Clicked="OnCancelarClicked"/>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

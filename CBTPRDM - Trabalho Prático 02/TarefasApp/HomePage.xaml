@@ -1,0 +1,53 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TarefasApp.HomePage"
+             BackgroundColor="{StaticResource BegeClaro}">
+
+    <VerticalStackLayout Padding="10" Spacing="10">
+
+        <Label Text="Autores: Atilio Almeida Costa, CB3025497; João Victor Crivoi Cesar Souza, CB3026159"
+               FontSize="Medium"
+               TextColor="{StaticResource MarromEscuro}"
+               HorizontalOptions="Center"
+               Margin="0,0,0,10"/>
+
+        <CollectionView x:Name="TarefasListView" SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="{StaticResource MarromClaro}" CornerRadius="10" Padding="10" Margin="0,5">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <VerticalStackLayout Grid.Column="0" Spacing="2">
+                                <Label Text="{Binding Titulo}" FontAttributes="Bold" TextColor="{StaticResource MarromClaro}" />
+                                <Label Text="{Binding Descricao}" TextColor="{StaticResource MarromClaro}" />
+                                <Label Text="{Binding Prioridade, StringFormat='Prioridade: {0}'}" 
+                   TextColor="{StaticResource MarromClaro}" 
+                   FontAttributes="Italic" 
+                   FontSize="12"/>
+                                <Label Text="{Binding DataCriacao, StringFormat='Data: {0:dd/MM/yyyy}'}"
+                   TextColor="{StaticResource MarromClaro}" 
+                   FontSize="12"/>
+                            </VerticalStackLayout>
+
+                            <!-- Botão Detalhes -->
+                            <Button Text="Detalhes"
+                Grid.Column="1"
+                BackgroundColor="{StaticResource MarromClaro}" 
+                TextColor="White"
+                Clicked="OnDetalhesItemClicked"
+                Padding="10,5"
+                VerticalOptions="Center"/>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Text="Adicionar" BackgroundColor="{StaticResource MarromEscuro}" TextColor="White"
+                Clicked="OnAdicionarClicked"/>
+    </VerticalStackLayout>
+</ContentPage>

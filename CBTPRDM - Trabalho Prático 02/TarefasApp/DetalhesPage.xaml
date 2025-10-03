@@ -1,0 +1,35 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TarefasApp.DetalhesPage"
+             BackgroundColor="{StaticResource BegeClaro}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="10" Spacing="10">
+
+            <Label Text="{Binding Titulo}"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   TextColor="{StaticResource MarromEscuro}"/>
+
+            <Label Text="{Binding Descricao}" TextColor="{StaticResource MarromEscuro}"/>
+
+            <Label Text="{Binding DataCriacao, StringFormat='Data: {0:d}'}"
+                   TextColor="{StaticResource MarromEscuro}"/>
+
+            <Label Text="{Binding Prioridade}" TextColor="{StaticResource MarromEscuro}"/>
+
+            <HorizontalStackLayout Spacing="10" Margin="0,20,0,0">
+                <Button Text="Editar"
+                        BackgroundColor="{StaticResource MarromClaro}"
+                        TextColor="White"
+                        Clicked="OnEditarClicked"/>
+
+                <Button Text="Excluir"
+                        BackgroundColor="{StaticResource MarromEscuro}"
+                        TextColor="White"
+                        Clicked="OnExcluirClicked"/>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

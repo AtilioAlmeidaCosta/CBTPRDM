@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Color x:Key="BegeClaro">#F5F5DC</Color>
+    <Color x:Key="BegeEscuro">#D2B48C</Color>
+    <Color x:Key="MarromClaro">#A0522D</Color>
+    <Color x:Key="MarromEscuro">#654321</Color>
+    <Color x:Key="TextoPrincipal">#3E2723</Color>
+
+    <SolidColorBrush x:Key="BegeClaroBrush" Color="{StaticResource BegeClaro}"/>
+    <SolidColorBrush x:Key="BegeEscuroBrush" Color="{StaticResource BegeEscuro}"/>
+    <SolidColorBrush x:Key="MarromClaroBrush" Color="{StaticResource MarromClaro}"/>
+    <SolidColorBrush x:Key="MarromEscuroBrush" Color="{StaticResource MarromEscuro}"/>
+</ResourceDictionary>
