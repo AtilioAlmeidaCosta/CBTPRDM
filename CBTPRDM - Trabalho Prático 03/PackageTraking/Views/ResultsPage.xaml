@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Autores:
+Atilio Almeida Costa
+CB3025497
+João Victor Crivoi Cesar Sousa
+CB3062027
+-->
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PackageTraking.Views.ResultsPage"
+    Title="Resultado">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="12">
+                <Frame BackgroundColor="{DynamicResource PageBackgroundColor}" Padding="12" CornerRadius="8">
+                    <StackLayout>
+                        <Label Text="{Binding Package.Id}" FontSize="18" FontAttributes="Bold" />
+                        <Label Text="{Binding Package.Status}" FontSize="16" />
+                        <Label Text="{Binding Package.CurrentLocation}" FontSize="14" />
+                        <Label Text="{Binding Package.ShippedDateString}" FontSize="12" />
+                        <Label Text="{Binding Package.ExpectedDeliveryString}" FontSize="12" />
+                    </StackLayout>
+                </Frame>
+
+                <Label Text="Historico de eventos" FontAttributes="Bold" />
+
+                <CollectionView ItemsSource="{Binding Package.Events}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="8" Margin="0,4" CornerRadius="6">
+                                <StackLayout>
+                                    <Label Text="{Binding DateString}" FontAttributes="Bold" />
+                                    <Label Text="{Binding Location}" FontSize="12" />
+                                    <Label Text="{Binding Description}" FontSize="12" />
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Button Text="Voltar" Command="{Binding GoBackCommand}" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

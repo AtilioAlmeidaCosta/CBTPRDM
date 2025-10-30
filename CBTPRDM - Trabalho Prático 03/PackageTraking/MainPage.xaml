@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Autores:
+Atilio Almeida Costa
+CB3025497
+João Victor Crivoi Cesar Sousa
+CB3062027
+-->
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PackageTraking.MainPage"
+    Title="Rastreamento">
+
+    <ContentPage.Content>
+        <Grid Padding="24" RowDefinitions="Auto,Auto,Auto,*,Auto" RowSpacing="12">
+            <Label Text="Rastrear pacote" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+
+            <Entry
+                Grid.Row="1"
+                Placeholder="Digite o codigo de rastreamento"
+                Text="{Binding TrackingCode}"
+                HorizontalOptions="FillAndExpand" />
+
+            <Button
+                Grid.Row="2"
+                Text="Buscar"
+                Command="{Binding SearchCommand}"
+                HorizontalOptions="FillAndExpand" />
+
+            <StackLayout Grid.Row="3" Spacing="8">
+                <Label Text="Pacotes Do sistema" FontAttributes="Bold" />
+                <CollectionView ItemsSource="{Binding Packages}"
+                                SelectionMode="Single"
+                                SelectionChangedCommand="{Binding SelectPackageCommand}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="8" Margin="0,4" CornerRadius="6">
+                                <StackLayout Orientation="Horizontal" Spacing="12">
+                                    <Label Text="{Binding Id}" FontAttributes="Bold" />
+                                    <Label Text="{Binding Status}" FontSize="12" VerticalOptions="Center" />
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+
+            <StackLayout Grid.Row="4" VerticalOptions="Start">
+                <Label Text="Dicas:" FontAttributes="Bold" />
+                <Label Text="Insira um codigo para ver o status do pacote." />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
