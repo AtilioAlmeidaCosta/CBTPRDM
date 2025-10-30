@@ -47,9 +47,11 @@ CB3062027
             </StackLayout>
 
             <StackLayout Grid.Row="4" VerticalOptions="Start">
+                <Label Text="Autores: Atilio Almeida Costa e Joao Victor Crivoi Cesar Souza" FontAttributes="Bold" />
                 <Label Text="Dicas:" FontAttributes="Bold" />
                 <Label Text="Insira um codigo para ver o status do pacote." />
             </StackLayout>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
+
